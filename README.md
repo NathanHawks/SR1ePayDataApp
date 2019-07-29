@@ -58,3 +58,15 @@ I'm not promising I'll ever work on this again since it already does most of wha
 - FEATURE: Saved setups (the "profile" field, which currently does nothing, was preparation for this) so that you can handle numerous decisions using autofire in the same combat without re-entering data. E.g. a dashboard of buttons to pick the shooter and target.
 - FEATURE: PCs and NPCs in a database you can build and edit, so you can quickly set up a combat.
 - LAWSUIT: Honestly it could become an entire combat handler but that depends on whether the C&D's start flowing or not (and also I wander away from projects, it's a thing). Autofire requires the full fire combat rules in place, so that's already done, it's just done in a way that can only be used for autofire.
+
+
+THANK ME WITH MONEY
+
+If you want to tip me once, hit my Paypal: 
+
+https://paypal.me/NathanHawks
+
+If you want to continuously support work like this, hit my Patreon:
+
+https://www.patreon.com/nathanhawks
+
