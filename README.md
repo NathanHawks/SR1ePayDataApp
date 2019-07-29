@@ -33,7 +33,7 @@ HOW TO USE
 Step 1: Setup
 - Leave the Profile field blank (it does nothing)
 - Enter the shooter's firearm skill/concentration/specialization rank in the Atk Rank field.
-- Enter the target's Body stat in the Def Rank field.
+- Enter the target's Body stat in the Def Body field.
 - Enter the number of shots to be fired in a single burst of autofire. (The result screen will automatically enforce the max 7 rule, and the max Skill Rank + 1 rule)
 - Enter the base TN from the range table.
 - Enter the sum of relevant Target Modifiers.
