@@ -15,7 +15,7 @@ WHAT IS THIS
 
 So far, this simple app only calculates Shadowrun 1st Edition full autofire results against a single target. 
 
-HOUSE RULE: In this version, the recoil modifier is progressive, instead of the flat penalty from the rulebook. Say you fire 5 shots; the rulebook says every shot suffers a +5 TN recoil penalty. Instead of that, I have the 2nd shot suffering +1 TN recoil, the 3rd shot suffering a +2 recoil mod, etc.
+HOUSE RULE: In this version, the recoil modifier is progressive, instead of the flat penalty from the rulebook. Say you fire 5 shots; the rulebook says every shot suffers a +5 TN recoil penalty. Instead of that, I have the 1st shot suffering no recoil; the 2nd shot suffering +1 TN recoil, the 3rd shot suffering a +2 recoil mod, etc.
 
 ----------------------------------------------------
 HOW TO INSTALL
