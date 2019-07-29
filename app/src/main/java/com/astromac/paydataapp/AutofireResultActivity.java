@@ -92,7 +92,7 @@ public class AutofireResultActivity extends AppCompatActivity {
         int def_successes = 0;
         int modified_tn = Integer.parseInt(base_tn) + Integer.parseInt(target_mods);
         // modify power for autofire
-        iDmgPower++;
+        iDmgPower++; // note: related vars now reflect different values (string input vs int)
         String mod_power = String.valueOf(iDmgPower);
 
         if (iNbrShots > iMaxShots) {
