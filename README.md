@@ -20,7 +20,7 @@ HOUSE RULE: In this version, the recoil modifier is progressive, instead of the 
 ----------------------------------------------------
 HOW TO INSTALL
 - Download the installer to your Android device by pointing its web browser at: https://github.com/NathanHawks/SR1ePayDataApp/raw/master/app/release/sr1epda-0_1.apk
-- Make the serious life decision whether or not to allow some random person's unsigned app to run on your device. Yeah, sorry, I tried to do a signature but it didn't work. Future versions will be signed, eventually.
+- Make the serious life decision whether or not to allow some random person's unsigned app to run on your device. Yeah, sorry, I tried to do a signature but it didn't work. Future versions will be signed, eventually, maybe, if there are any future versions.
 
 ----------------------------------------------------
 IF IT WON'T INSTALL
