@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|top"
                 android:layout_marginTop="6dp"
-                android:text="@string/AutofireResultTitle"
+                android:text="@string/afr_view_title"
                 android:textColor="#FF5722"
                 android:textColorHighlight="#E6FF5722"
                 android:textSize="20sp" />

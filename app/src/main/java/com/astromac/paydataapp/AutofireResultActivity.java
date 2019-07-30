@@ -3,12 +3,17 @@ package com.astromac.paydataapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
 public class AutofireResultActivity extends AppCompatActivity {
+
     public int d6(boolean explode) {
         int roll = (int) (Math.random() * 6 + 1);
         if (roll == 6 && explode == true) {
@@ -17,20 +22,20 @@ public class AutofireResultActivity extends AppCompatActivity {
         return roll;
     }
     public String[] getDmgLevels() {
-        String[] levels = new String[]{getString(R.string.opt_dmg_lvl_0),
-                getString(R.string.opt_dmg_lvl_1),
-                getString(R.string.opt_dmg_lvl_2),
-                getString(R.string.opt_dmg_lvl_3),
-                getString(R.string.opt_dmg_lvl_4)};
+        String[] levels = new String[]{getString(R.string.afc_opt_dmg_lvl_0),
+                getString(R.string.afc_opt_dmg_lvl_1),
+                getString(R.string.afc_opt_dmg_lvl_2),
+                getString(R.string.afc_opt_dmg_lvl_3),
+                getString(R.string.afc_opt_dmg_lvl_4)};
         return levels;
     }
     public String getDmgLabel(String dmgLevel) {
         String[] levels = getDmgLevels();
         int dmgIndex = -1;
         for (int x = 0; x < levels.length; x++) if (dmgLevel.contentEquals(levels[x])) dmgIndex = x;
-        String[] labels = {getString(R.string.label_dmg_lvl_0), getString(R.string.label_dmg_lvl_1),
-                getString(R.string.label_dmg_lvl_2), getString(R.string.label_dmg_lvl_3),
-                getString(R.string.label_dmg_lvl_4)};
+        String[] labels = {getString(R.string.afr_label_dmg_lvl_0), getString(R.string.afr_label_dmg_lvl_1),
+                getString(R.string.afr_label_dmg_lvl_2), getString(R.string.afr_label_dmg_lvl_3),
+                getString(R.string.afr_label_dmg_lvl_4)};
         return labels[dmgIndex];
     }
     public String changeDmgCategory(String dmgWas, int modBy) {
@@ -65,19 +70,19 @@ public class AutofireResultActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent intent = getIntent();
-        String prf_name = intent.getStringExtra(MainActivity.PRF_NAME);
-        String atk_rank = intent.getStringExtra(MainActivity.ATK_RANK);
-        String def_rank = intent.getStringExtra(MainActivity.DEF_RANK);
-        String nbr_shots = intent.getStringExtra(MainActivity.NBR_SHOTS);
-        String base_tn = intent.getStringExtra(MainActivity.BASE_TN);
-        String target_mods = intent.getStringExtra(MainActivity.TGT_MODS);
-        String dmg_power = intent.getStringExtra(MainActivity.DMG_POWER);
-        String dmg_level = intent.getStringExtra(MainActivity.DMG_LEVEL);
-        String dmg_stage = intent.getStringExtra(MainActivity.DMG_STAGE);
-        String armor_worn = intent.getStringExtra(MainActivity.ARMOR_WORN);
-        String armor_derm = intent.getStringExtra(MainActivity.ARMOR_DERM);
+        String prf_name = intent.getStringExtra(AutofireCalculatorActivity.PRF_NAME);
+        String atk_rank = intent.getStringExtra(AutofireCalculatorActivity.ATK_RANK);
+        String def_rank = intent.getStringExtra(AutofireCalculatorActivity.DEF_RANK);
+        String nbr_shots = intent.getStringExtra(AutofireCalculatorActivity.NBR_SHOTS);
+        String base_tn = intent.getStringExtra(AutofireCalculatorActivity.BASE_TN);
+        String target_mods = intent.getStringExtra(AutofireCalculatorActivity.TGT_MODS);
+        String dmg_power = intent.getStringExtra(AutofireCalculatorActivity.DMG_POWER);
+        String dmg_level = intent.getStringExtra(AutofireCalculatorActivity.DMG_LEVEL);
+        String dmg_stage = intent.getStringExtra(AutofireCalculatorActivity.DMG_STAGE);
+        String armor_worn = intent.getStringExtra(AutofireCalculatorActivity.ARMOR_WORN);
+        String armor_derm = intent.getStringExtra(AutofireCalculatorActivity.ARMOR_DERM);
 
-        String message = getString(R.string.AutofireResult_Msg_DodgePool);
+        String message = getString(R.string.afr_msg_dodge_pool);
         String rollLog = "";
         int iNbrShots = Integer.parseInt(nbr_shots);
         int iAtkRank = Integer.parseInt(atk_rank);
@@ -98,12 +103,12 @@ public class AutofireResultActivity extends AppCompatActivity {
         if (iNbrShots > iMaxShots) {
             iNbrShots = iMaxShots;
             nbr_shots = String.valueOf(iNbrShots);
-            message = message + getString(R.string.AutofireResult_Msg_NbrShotsSkillCap);
+            message = message + getString(R.string.afr_msg_skillcap);
         }
         if (iNbrShots > 7) {
             iNbrShots = 7;
             nbr_shots = String.valueOf(iNbrShots);
-            message = message + getString(R.string.AutofireResult_Msg_NbrShotsRuleCap);
+            message = message + getString(R.string.afr_msg_maxcap);
         }
 
         // take the shots
@@ -119,7 +124,7 @@ public class AutofireResultActivity extends AppCompatActivity {
                 recoil_mod = shot-1;
                 // recoil_mod = iNbrShots; // uncomment this line for 1e Rules As Written
                 modified_tn += recoil_mod;
-                rollLog += getString(R.string.AutofireResult_RollLog_AddingRecoil) + recoil_mod
+                rollLog += getString(R.string.afr_rollLog_recoil) + recoil_mod
                         + " (TN " + modified_tn + ")";
             }
             // other mods
@@ -160,7 +165,7 @@ public class AutofireResultActivity extends AppCompatActivity {
                     rollLog += "\n  ▼ Damage reduced " + modBy + " categories to " + dmgLevel + ".";
                 }
                 rollLog += "\n" + getDmgLabel(dmgLevel);
-            } else rollLog += "\n" + getString(R.string.label_dmg_lvl_miss);
+            } else rollLog += "\n" + getString(R.string.afr_label_dmg_lvl_miss);
 
         }
 
