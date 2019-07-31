@@ -127,7 +127,7 @@ public class AutofireResultActivity extends AppCompatActivity {
                 rollLog += getString(R.string.afr_rollLog_recoil) + recoil_mod
                         + " (TN " + modified_tn + ")";
             }
-            // other mods
+
             // Success Test
             rollLog = rollLog + "\n  ፨ Shooter: ";
             for (int die = 1; die <= iAtkRank; die++) {
@@ -140,7 +140,7 @@ public class AutofireResultActivity extends AppCompatActivity {
             // Calculate damage
             String dmgLevel = dmg_level;
             int modBy = (int) (Math.floor((atk_successes-1) / iDmgStage));
-            if ((atk_successes - 1) / iDmgStage >= 1) {
+            if (modBy >= 1) {
                 dmgLevel = changeDmgCategory(dmgLevel, modBy);
                 rollLog += "\n  ▲ Damage raised " + modBy + " categories to " + dmgLevel + ".";
             }

@@ -10,9 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.Spinner;
+import android.widget.TextView;
 
 public class AutofireCalculatorActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -42,18 +41,39 @@ public class AutofireCalculatorActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+    }
 
-        // initialize UI elements
-        // 2nd Damage code field (wound severity)
-        Spinner dmgLevel = findViewById(R.id.dmgLevelSpin);
-        String[] levels = new String[]{getString(R.string.afc_opt_dmg_lvl_0),
-                getString(R.string.afc_opt_dmg_lvl_1),
-                getString(R.string.afc_opt_dmg_lvl_2),
-                getString(R.string.afc_opt_dmg_lvl_3),
-                getString(R.string.afc_opt_dmg_lvl_4)};
-        dmgLevel.setAdapter(new ArrayAdapter<>
-                (this, android.R.layout.simple_spinner_dropdown_item, levels)
-        );
+    public void showDmgLvlsList(View view) {
+        TextView tv1 = findViewById(R.id.dmgLevelMenu1);
+        TextView tv2 = findViewById(R.id.dmgLevelMenu2);
+        TextView tv3 = findViewById(R.id.dmgLevelMenu3);
+        TextView tv4 = findViewById(R.id.dmgLevelMenu4);
+        TextView tv5 = findViewById(R.id.dmgLevelMenu5);
+        tv1.setVisibility(View.VISIBLE);
+        tv2.setVisibility(View.VISIBLE);
+        tv3.setVisibility(View.VISIBLE);
+        tv4.setVisibility(View.VISIBLE);
+        tv5.setVisibility(View.VISIBLE);
+    }
+
+    public void onItemClick(View view) {
+        TextView dmgText = findViewById(R.id.dmgLevelText);
+        // wtf, why is this necessary, why can't i just cast & call in one go?
+        TextView tmp = (TextView) view;
+        String dmgLevelSelection = (String) tmp.getText();
+        dmgText.setText(dmgLevelSelection);
+        dmgText.setTextColor(0xFFFF8844);
+        dmgText.refreshDrawableState();
+        TextView tv1 = findViewById(R.id.dmgLevelMenu1);
+        TextView tv2 = findViewById(R.id.dmgLevelMenu2);
+        TextView tv3 = findViewById(R.id.dmgLevelMenu3);
+        TextView tv4 = findViewById(R.id.dmgLevelMenu4);
+        TextView tv5 = findViewById(R.id.dmgLevelMenu5);
+        tv1.setVisibility(View.GONE);
+        tv2.setVisibility(View.GONE);
+        tv3.setVisibility(View.GONE);
+        tv4.setVisibility(View.GONE);
+        tv5.setVisibility(View.GONE);
     }
 
     /** Called when the user taps the Send button */
@@ -66,7 +86,7 @@ public class AutofireCalculatorActivity extends AppCompatActivity
         String base_tn = ((EditText)findViewById(R.id.baseTNText)).getText().toString();
         String target_mods = ((EditText)findViewById(R.id.targetModsText)).getText().toString();
         String dmg_power = ((EditText)findViewById(R.id.dmgPowerText)).getText().toString();
-        String dmg_level = ((Spinner)findViewById(R.id.dmgLevelSpin)).getSelectedItem().toString();
+        String dmg_level = ((TextView)findViewById(R.id.dmgLevelText)).getText().toString();
         String dmg_stage = ((EditText)findViewById(R.id.dmgStagingText)).getText().toString();
         String armor_derm = ((EditText)findViewById(R.id.armorDermalText)).getText().toString();
         String armor_worn = ((EditText)findViewById(R.id.armorWornText)).getText().toString();

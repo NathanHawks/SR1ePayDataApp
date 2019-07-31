@@ -8,6 +8,7 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/app_bar_autofire_calculator">
 
+
     <EditText
         android:id="@+id/pcNameText"
         android:layout_width="0dp"
@@ -95,7 +96,7 @@
         android:textColorHint="#842"
         android:textColorLink="#f84"
         app:layout_constraintBaseline_toBaselineOf="@+id/dmgPowerText"
-        app:layout_constraintStart_toEndOf="@+id/dmgLevelSpin" />
+        app:layout_constraintStart_toEndOf="@+id/dmgLevelText" />
 
     <EditText
         android:id="@+id/dmgPowerText"
@@ -163,15 +164,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/baseTNText" />
 
-    <Spinner
-        android:id="@+id/dmgLevelSpin"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/dmgLevelText"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
+        android:background="#454545"
+        android:ems="3"
+        android:gravity="center"
+        android:maxEms="3"
+        android:minEms="3"
+        android:onClick="showDmgLvlsList"
+        android:text="M"
+        android:textColor="#842"
+        android:textColorHighlight="#FF8040"
+        android:textColorHint="#FF8040"
+        android:textColorLink="#FF8040"
         app:layout_constraintStart_toEndOf="@+id/dmgPowerText"
-        app:layout_constraintTop_toBottomOf="@+id/baseTNText" />
+        app:layout_constraintTop_toBottomOf="@+id/targetModsText" />
 
     <EditText
         android:id="@+id/armorWornText"
@@ -237,4 +249,114 @@
         android:textColorLink="#f84"
         app:layout_constraintBaseline_toBaselineOf="@+id/baseTNText"
         app:layout_constraintStart_toEndOf="@+id/baseTNText" />
+
+    <TextView
+        android:id="@+id/dmgLevelMenu1"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="217dp"
+        android:background="#454545"
+        android:ems="3"
+        android:gravity="center"
+        android:maxEms="3"
+        android:minEms="3"
+        android:onClick="onItemClick"
+        android:text="--"
+        android:textColor="#FF8040"
+        android:textColorHighlight="#FF8040"
+        android:textColorHint="#FF8040"
+        android:textColorLink="#FF8040"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dmgLevelMenu2"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="#454545"
+        android:ems="3"
+        android:gravity="center"
+        android:maxEms="3"
+        android:minEms="3"
+        android:onClick="onItemClick"
+        android:text="L"
+        android:textColor="#FF8040"
+        android:textColorHighlight="#FF8040"
+        android:textColorHint="#FF8040"
+        android:textColorLink="#FF8040"
+        android:visibility="gone"
+        app:layout_constraintBaseline_toBaselineOf="@+id/dmgLevelMenu1"
+        app:layout_constraintStart_toEndOf="@+id/dmgLevelMenu1" />
+
+    <TextView
+        android:id="@+id/dmgLevelMenu3"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="#454545"
+        android:ems="3"
+        android:gravity="center"
+        android:maxEms="3"
+        android:minEms="3"
+        android:onClick="onItemClick"
+        android:text="M"
+        android:textColor="#FF8040"
+        android:textColorHighlight="#FF8040"
+        android:textColorHint="#FF8040"
+        android:textColorLink="#FF8040"
+        android:visibility="gone"
+        app:layout_constraintBaseline_toBaselineOf="@+id/dmgLevelMenu2"
+        app:layout_constraintStart_toEndOf="@+id/dmgLevelMenu2" />
+
+    <TextView
+        android:id="@+id/dmgLevelMenu4"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="#454545"
+        android:ems="3"
+        android:gravity="center"
+        android:maxEms="3"
+        android:minEms="3"
+        android:onClick="onItemClick"
+        android:text="S"
+        android:textColor="#FF8040"
+        android:textColorHighlight="#FF8040"
+        android:textColorHint="#FF8040"
+        android:textColorLink="#FF8040"
+        android:visibility="gone"
+        app:layout_constraintBaseline_toBaselineOf="@+id/dmgLevelMenu3"
+        app:layout_constraintStart_toEndOf="@+id/dmgLevelMenu3" />
+
+    <TextView
+        android:id="@+id/dmgLevelMenu5"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="#454545"
+        android:ems="3"
+        android:gravity="center"
+        android:maxEms="3"
+        android:minEms="3"
+        android:onClick="onItemClick"
+        android:text="D"
+        android:textColor="#FF8040"
+        android:textColorHighlight="#FF8040"
+        android:textColorHint="#FF8040"
+        android:textColorLink="#FF8040"
+        android:visibility="gone"
+        app:layout_constraintBaseline_toBaselineOf="@+id/dmgLevelMenu4"
+        app:layout_constraintStart_toEndOf="@+id/dmgLevelMenu4" />
+
+    <ListView
+        android:id="@+id/dmgLevelList"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="32dp"
+        android:background="#FF303030"
+        android:entries="@array/dmg_levels_array"
+        android:foregroundGravity="center"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </android.support.constraint.ConstraintLayout>

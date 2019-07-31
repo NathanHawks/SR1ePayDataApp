@@ -18,6 +18,13 @@
     <string name="afc_field_label_damage">Base Dmg Code:</string>
     <string name="afc_field_dmg_power">4</string>
     <string name="afc_field_dmg_stage">3</string>
+    <string-array name="dmg_levels_array">
+        <item value="--">--</item>
+        <item value="L">L</item>
+        <item value="M">M</item>
+        <item value="S">S</item>
+        <item value="D">D</item>
+    </string-array>
     <string name="afc_opt_dmg_lvl_0">--</string>
     <string name="afc_opt_dmg_lvl_1">L</string>
     <string name="afc_opt_dmg_lvl_2">M</string>
