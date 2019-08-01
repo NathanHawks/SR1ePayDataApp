@@ -116,13 +116,8 @@ public class AutofireCalculatorActivity extends AppCompatActivity
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else if (isDmgMenuOpen) {
-            closeDmgMenu();
-        } else {
-            super.onBackPressed();
-        }
+        if (drawer.isDrawerOpen(GravityCompat.START)) { drawer.closeDrawer(GravityCompat.START); }
+        else if (isDmgMenuOpen) { closeDmgMenu(); } else { super.onBackPressed(); }
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
