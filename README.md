@@ -52,7 +52,7 @@ FUTURE UPDATES (MIGHT NEVER HAPPEN)
 
 I'm not promising I'll ever work on this again since it already does most of what I need; but if I do, here are some features that might pull me back in:
 
-- FIX: Fix the style on the drop-down menu for damage power level (it's more complicated than it sounds)
+- ~~FIX: Fix the style on the drop-down menu for damage power level (it's more complicated than it sounds)~~ fixed in dev version, will figure out a release strategy soonish
 - ENHANCEMENT: Create a popup to let you pick target modifiers from a list (while alternately still allowing you to manually enter a number)
 - FEATURE: Grenade throw resolution.
 - FEATURE: Saved setups (the "profile" field, which currently does nothing, was preparation for this) so that you can handle numerous decisions using autofire in the same combat without re-entering data. E.g. a dashboard of buttons to pick the shooter and target.
