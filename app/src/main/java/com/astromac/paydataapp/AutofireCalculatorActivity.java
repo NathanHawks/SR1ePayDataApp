@@ -27,6 +27,7 @@ public class AutofireCalculatorActivity extends AppCompatActivity
     public static final String DMG_STAGE = "com.astromac.paydataapp.DSTAGE";
     public static final String ARMOR_WORN = "com.astromac.paydataapp.AWORN";
     public static final String ARMOR_DERM = "com.astromac.paydataapp.ADERMAL";
+    private boolean isDmgMenuOpen = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,7 @@ public class AutofireCalculatorActivity extends AppCompatActivity
     }
 
     public void showDmgLvlsList(View view) {
+        isDmgMenuOpen = true;
         TextView tv1 = findViewById(R.id.dmgLevelMenu1);
         TextView tv2 = findViewById(R.id.dmgLevelMenu2);
         TextView tv3 = findViewById(R.id.dmgLevelMenu3);
@@ -56,14 +58,7 @@ public class AutofireCalculatorActivity extends AppCompatActivity
         tv5.setVisibility(View.VISIBLE);
     }
 
-    public void onItemClick(View view) {
-        TextView dmgText = findViewById(R.id.dmgLevelText);
-        // wtf, why is this necessary, why can't i just cast & call in one go?
-        TextView tmp = (TextView) view;
-        String dmgLevelSelection = (String) tmp.getText();
-        dmgText.setText(dmgLevelSelection);
-        dmgText.setTextColor(0xFFFF8844);
-        dmgText.refreshDrawableState();
+    public void closeDmgMenu() {
         TextView tv1 = findViewById(R.id.dmgLevelMenu1);
         TextView tv2 = findViewById(R.id.dmgLevelMenu2);
         TextView tv3 = findViewById(R.id.dmgLevelMenu3);
@@ -74,6 +69,17 @@ public class AutofireCalculatorActivity extends AppCompatActivity
         tv3.setVisibility(View.GONE);
         tv4.setVisibility(View.GONE);
         tv5.setVisibility(View.GONE);
+        isDmgMenuOpen = false;
+    }
+    public void onItemClick(View view) {
+        TextView dmgText = findViewById(R.id.dmgLevelText);
+        // wtf, why is this necessary, why can't i just cast & call in one go?
+        TextView tmp = (TextView) view;
+        String dmgLevelSelection = (String) tmp.getText();
+        dmgText.setText(dmgLevelSelection);
+        dmgText.setTextColor(0xFFFF8844);
+        dmgText.refreshDrawableState();
+        closeDmgMenu();
     }
 
     /** Called when the user taps the Send button */
@@ -112,6 +118,8 @@ public class AutofireCalculatorActivity extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
+        } else if (isDmgMenuOpen) {
+            closeDmgMenu();
         } else {
             super.onBackPressed();
         }
