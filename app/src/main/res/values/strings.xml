@@ -7,7 +7,7 @@
     <string name="menu_autofire">Full Autofire</string>
     <string name="menu_grenade">Grenade Accuracy</string>
     <string name="menu_database">NPC/PC Database</string>
-    <string name="menu_full_combat">Combat Runner</string>
+    <string name="menu_full_combat">Combat Dashboard</string>
     <string name="menu_settings">Settings</string>
     <string name="afc_profile_name">Profile name (optional)</string>
     <string name="afc_field_atk_rank">Atk Skill</string>
