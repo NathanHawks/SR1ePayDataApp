@@ -2,7 +2,7 @@
 ----------------------------------------------------
 LEGAL
 
-This software is released under the terms of the Creative Commons Attribution-ShareAlike License, found here: https://creativecommons.org/licenses/by-sa/2.0/
+This software is released under the terms of the Unlicense, as-is and without warranty, to the public domain.
 
 This software implements some systems of the Shadowrun First Edition core rulebook. Please don't sue me.
 
