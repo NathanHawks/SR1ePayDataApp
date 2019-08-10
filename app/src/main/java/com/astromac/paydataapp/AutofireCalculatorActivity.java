@@ -126,21 +126,22 @@ public class AutofireCalculatorActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_dashboard) {
+        /*if (id == R.id.nav_dashboard) {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_autofire) {
+        } else */
+        if (id == R.id.nav_autofire) {
             Intent intent = new Intent(this, AutofireCalculatorActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_grenade) {
+        } /* else if (id == R.id.nav_grenade) {
 
-        } else if (id == R.id.nav_database) {
+        }*/ /*else if (id == R.id.nav_database) {
 
         } else if (id == R.id.nav_full_combat) {
 
         } else if (id == R.id.nav_settings) {
 
-        }
+        }*/
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
